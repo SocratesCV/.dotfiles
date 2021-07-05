@@ -12,10 +12,19 @@ Con esto se creará un directorio .dotfiles y dentro todos los archivos de confi
 Ahora solo queda remplazar y enlaza los archivos originales.
 Creamos los archivos vacío dentro de su ubicación:
 < touch config>
-Después cremos el enlace con la aplicación stow:
+Después cremos los enlaces simbólicos con la aplicación stow:
 ` stow --adopt -nv i3`  
-La opción -n es para ver si hay algún error, hace una simulación, si todo está bien se puede quitar esa opción y ya se ejecuta.
+La opción -n es para ver si hay algún error, hace una simulación de los enlaces simbólicos, si todo está bien se puede quitar esa opción y ya se ejecuta.
 ` stow --adopt -v i3` 
+Subimos todo a github
+`git add . ` Para añadir todos los archivos modificados.
+`git commit -m "Mensaje explicativo"` Comentamos la modificación.
+`git push origin master`  Subimos las modificaciones a la rama principal.
+
+Para recuperar los archivos en otro equipo:
+`git clone  https://github.com/SocratesCV/.dotfiles.git`
+`cd ~/.dotfiles`
+`stow -v i3` Crea los enlaces simbólicos necesarios.
 
 ## Alacritty
 ### Descripción:
